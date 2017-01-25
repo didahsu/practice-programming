@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算字符数</title>
+</head>
+<body>
+  <h1>What is the input string?</h1>
+  <input type="text" placeholder="请输入字符">
+  <span id="prompt">请输入内容！</span>
+  <p id="output"></p>
+  <script>
+    var oinput = document.getElementsByTagName('input')[0]
+    var ospan = document.getElementById('prompt')
+    var op = document.getElementById('output')
+
+    oinput.onkeyup = function() {
+      var num = oinput.value.length
+      var text = oinput.value + " has " + num + " characters."
+      if (num === 0) {
+        ospan.innerText = "请输入内容！"
+        op.innerText = ''
+        return
+      }
+      ospan.innerText = ''
+      op.innerText = text
+    }
+  </script>
+</body>
+</html>
