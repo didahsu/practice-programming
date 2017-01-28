@@ -22,3 +22,34 @@ Do you walk your blue dog quickly? That's hilarious!
 - 向程序中添加更多输入，扩展故事。
 
 - 实现一个带有分支发展的故事，可以根据问题的答案来确定如何构造故事。在第4章的问题中，你将进一步探索这个概念。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>疯狂填词</title>
+</head>
+<body>
+  <input type="text" placeholder="enter a noun">
+  <input type="text" placeholder="enter a verb">
+  <input type="text" placeholder="enter a adjective">
+  <input type="text" placeholder="enter a adverb">
+  <button type="button" id="btn">确定</button>  
+  <p id="content"></p>
+
+
+  <script>
+    var btn = document.getElementById('btn')
+    var content = document.getElementById('content')
+    var inputs = document.getElementsByTagName('input')
+
+    btn.onclick = function() {
+      var str = `do you ${inputs[1].value} your ${inputs[2].value} ${inputs[0].value} ${inputs[3].value}? That's hilarious!`
+      content.innerHTML = str
+    }
+  </script>
+</body>
+</html>
+
+```
