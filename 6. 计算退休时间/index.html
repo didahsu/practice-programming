@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算退休时间</title>
+</head>
+<body>
+  <h1>What is your current age?</h1>
+  <input type="text">
+  <h1>At what age would you like to retire?</h1>
+  <input type="text">
+  <button type="button">确定</button>
+  <p id="content"></p>
+
+  <script>
+    var inputAge = document.getElementsByTagName('input')[0]
+    var inputRetire = document.getElementsByTagName('input')[1]
+    var content = document.getElementById('content')
+    var btn = document.getElementsByTagName('button')[0]
+
+    btn.onclick = function() {
+      var currentAge = parseInt(inputAge.value)
+      var retireAge = parseInt(inputRetire.value)
+      var diff = retireAge - currentAge
+      var nowYear = new Date().getFullYear()
+
+      if (diff <= 0) {
+        content.innerText = '您已经可以退休了！'
+      } else {
+        content.innerText = `You have ${diff} years left until you can retire.
+                             It's ${nowYear}, so you can retire in ${nowYear + diff}.`
+      }
+
+      
+    }
+
+  </script>
+</body>
+</html>
